@@ -1,0 +1,17 @@
+{% extends 'men/basic.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="form-post">
+    <h2>Добавление статьи</h2>
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for post in form %}
+            {{ post }} <br><br>
+        {% endfor %}
+        <button class="btn btn-warning">Отправить</button>
+        {{ error }}
+    </form>
+</div>
+{% endblock %}

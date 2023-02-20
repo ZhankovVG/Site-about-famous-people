@@ -1,0 +1,16 @@
+{% extends 'men/basic.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="post">
+            {% if post.photo %}
+                <p><img src="{{ post.photo.url }}" alt="photo-men"></p>
+            {% endif %}
+            <h2>{{ posts.name }}</h2>       
+            <p>{{ posts.content | linebreaks }}</p>         
+        </div>
+    </main>
+{% endblock %}

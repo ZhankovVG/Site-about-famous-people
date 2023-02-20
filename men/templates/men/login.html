@@ -1,0 +1,15 @@
+{% extends 'men/basic.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="form-post">
+    <h2>Регистрация</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>Имя пользователя {{ form.username }}</p> <br>
+        <p>Введите пароль {{ form.password }}</p> <br>
+        <button class="btn btn-primary" type="submit">Войти</button>
+    </form>
+</div>
+{% endblock %}
